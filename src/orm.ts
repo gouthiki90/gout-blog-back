@@ -4,7 +4,7 @@ dotenv.config();
 import {
   IConfig,
   ModelBuilder,
-  DialectMySQL,
+  DialectPostgres,
 } from "sequelize-typescript-generator";
 
 (async () => {
@@ -22,12 +22,12 @@ import {
     },
     output: {
       clean: true,
-      outDir: "./models",
+      outDir: "./src/models",
     },
     strict: true,
   };
 
-  const dialect = new DialectMySQL();
+  const dialect = new DialectPostgres();
 
   const builder = new ModelBuilder(config, dialect);
 
